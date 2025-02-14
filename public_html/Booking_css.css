@@ -29,6 +29,21 @@ header .container {
     align-items: center;
 }
 
+header .container-2 {
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+}
+
+header .navibar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 header .logo {
     display: flex;
     align-items: center;
@@ -42,15 +57,22 @@ header .logo img {
 header .logo h1 {
     font-size: 1.5rem;
     color: white;
+    white-space: nowrap;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    gap: 10px; 
+    justify-content: center; 
 }
 
 header nav ul li {
-    margin-left: 20px;
+    margin-left: 0;
+    flex-shrink: 0;
 }
 
 header nav ul li a {
@@ -59,6 +81,7 @@ header nav ul li a {
     font-size: 1rem;
     padding: 5px 10px;
     transition: background 0.3s;
+    white-space: nowrap;
 }
 
 header nav ul li a:hover {
@@ -368,4 +391,32 @@ footer .footer-bottom {
     max-width: 100px;
     height: auto;
     margin-bottom: 10px;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    header .container-2 {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    header .logo {
+        margin-bottom: 10px;
+    }
+
+    header nav ul {
+        flex-wrap: nowrap; /* Prevent wrapping on mobile */
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px 0;
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+
+    header nav ul li a {
+        font-size: 0.9rem; /* Slightly smaller font for mobile */
+        padding: 5px 8px;
+        white-space: nowrap;
+    }
 }
