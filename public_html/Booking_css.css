@@ -404,20 +404,67 @@ footer .footer-bottom {
         margin-bottom: 10px;
         padding-right: 50px;
     }
-
-    header nav ul {
-        flex-wrap: nowrap; /* Prevent wrapping on mobile */
-        overflow-x: auto; /* Allow horizontal scrolling if needed */
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 5px 0;
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    .nav-toggle {
+        display: none;
     }
-
+    
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+    
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background: white;
+        transition: all 0.3s ease;
+    }
+    
+    .navibar {
+        position: fixed;
+        right: -100%;
+        top: 70px;
+        width: 100%;
+        background: #333;
+        transition: 0.3s;
+        padding: 20px 0;
+    }
+    
+    /* Show menu when checkbox is checked */
+    .nav-toggle:checked ~ .navibar {
+        right: 0;
+    }
+    
+    /* Hamburger animation */
+    .nav-toggle:checked + .hamburger .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .nav-toggle:checked + .hamburger .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle:checked + .hamburger .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Navigation list styles */
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    header nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    
     header nav ul li a {
-        font-size: 0.9rem; /* Slightly smaller font for mobile */
-        padding: 5px 8px;
-        white-space: nowrap;
+        display: block;
+        padding: 10px;
     }
 }
