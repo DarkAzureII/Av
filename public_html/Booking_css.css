@@ -35,7 +35,7 @@ header .container-2 {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 0;
 }
 
 header .navibar {
@@ -397,12 +397,11 @@ footer .footer-bottom {
 @media screen and (max-width: 768px) {
     header .container-2 {
         flex-direction: row;
-        padding-left: 0px;
+        padding: 10px;
     }
 
     header .logo {
         margin-bottom: 10px;
-        padding-right: 50px;
     }
 
     header nav ul {
